@@ -495,7 +495,7 @@ pico Dockerfile
 > FROM ubuntu:latest
 > RUN apt-get update -y
 > RUN apt-get install software-properties-common -y
-> RUN apt-get install python3.7 -y
+> RUN apt-get install python3-pip -y
 > ADD . /app
 > WORKDIR /app
 > CMD ["python3", "test.py"]
@@ -538,7 +538,7 @@ $ docker build -f Dockerfile . -t mini-python3-image
 43. Let's run it; I will create a new container called `test-python3-container`; I will still use the interactive `-it` shorthand to enter  the bash.
 
 ```bash
-$ docker run --name test-python3-container -it mini-python3-image /bin/bash
+$ docker run --name test-python3-container mini-python3-image
 ```
 
 :checkered_flag: Well done! You completed lab 5.1! 
